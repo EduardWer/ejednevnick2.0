@@ -12,7 +12,7 @@
         <!-- Панель выбора даты -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
             <Label Content="Выберите дату:" VerticalAlignment="Center" />
-            <DatePicker x:Name="dATE_TRANS" FirstDayOfWeek="Monday"/>
+            <DatePicker x:Name="dATE_TRANS" FirstDayOfWeek="Monday"  SelectedDateChanged="dATE_TRANS_SelectedDateChanged"/>
         </StackPanel>
 
         <!-- Список заметок -->
@@ -41,17 +41,17 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Название:" VerticalAlignment="Bottom" Margin="0,0,0,1" />
-            <TextBox Grid.Column="1"  Margin="5" />
+            <TextBox x:Name="title_text" Grid.Column="1"  Margin="5" />
 
             <Label Grid.Row="1" Content="Описание:" VerticalAlignment="Top" />
-            <TextBox Grid.Row="1" Grid.Column="1" Text="" Margin="5" />
+            <TextBox x:Name="description_text" Grid.Row="1" Grid.Column="1" Text="" Margin="5" />
 
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <!--я ЗАЛЕЗ НА ОФИЦИАЛЬНЫЙ САЙТ ТАМ ЭТО УЗНАЛ НЕ БЕЙТЕ -->
                 <Button x:Name="sAVE_bUTTON" Content="Сохранить😊😊"  Margin="5" Click="sAVE_bUTTON_Click" />
-                <Button x:Name="dELL_bUTTON" Content="Удалить😒😒"  Margin="5" Click="dELL_bUTTON_Click" />
+                <!--<Button x:Name="dELL_bUTTON" Content="Удалить😒😒"  Margin="5" Click="dELL_bUTTON_Click" />-->
             </StackPanel>
-            <Label x:Name="Zametka" Content=""  Grid.Row="3" Grid.Column="2" RenderTransformOrigin="0.5,0.5"  Width="700" Height="300"/>
+            <TextBox x:Name="Zametka"   Grid.Row="3" Grid.Column="2" RenderTransformOrigin="0.5,0.5"  Width="700" Height="300"/>
 
         </Grid>
     </Grid>
